@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube clone</title>
+    <link href="youstyle.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <header class="head">
+        <section class="topheader">
+            <section class="left">
+                <article class="menu">
+                    <div class="abc"></div>
+                    <div class="abc"></div>
+                    <div class="abc"></div>
+                </article>
+                <article>
+                    <img class="youlogo"
+                        src="data:image/png;base64,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">
+
+                </article>
+
+                </article>
+            </section>
+
+            <section class="middle">
+                <article>
+                    <input type="text" placeholder="search">
+                </article>
+                <button>
+                    <img class="search-icon" src="http://www.clker.com/cliparts/g/Y/P/o/h/U/search-logo.svg ">
+                </button>
+                <article>
+                    <img class="mic"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT59LEpYUv4RcML34d-TAAO0D0UrQUNy5_L6g&usqp=CAU">
+                </article>
+            </section>
+
+            <section class="right">
+                <article>
+                    <img class="not"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBB4ELRwTrxy6lKCQJe9Q5ez9nIEqQHE-xRg&usqp=CAU ">
+                    <article class="notnum">
+                        3
+                    </article>
+                </article>
+
+                <article>
+                    <img class="profile"
+                        src="https://yt3.ggpht.com/ytc/AKedOLRD5TgAOw8g1nuZ-_3JlEpzBlP13TKWwgkL_01Hcw=s88-c-k-c0x00ffffff-no-rj">
+                </article>
+
+            </section>
+        </section>
+        <section class="bottomheader">
+            <ul>
+                <li>
+                    <button class="but">All</button>
+
+                </li>
+                <li>
+                    <button class="but">CSS</button>
+                </li>
+                <li>
+                    <button class="but">Computer programming</button>
+                </li>
+                <li>
+                    <button class="but">Live</button>
+                </li>
+                <li>
+                    <button class="but">Music</button>
+                </li>
+                <li>
+                    <button class="but">Mixes</button>
+                </li>
+                <li>
+                    <button class="but">Sales</button>
+                </li>
+                <li>
+                    <button class="but">User interface design</button>
+                </li>
+                <li>
+                    <button class="but">Statistics</button>
+                </li>
+                <li>
+                    <button class="but">Gaming</button>
+                </li>
+                <li>
+                    <button class="but">Nollywood</button>
+                </li>
+
+            </ul>
+        </section>
+
+
+
+    </header>
+
+
+    <nav class="sidebar">
+        <div class="box">
+            <img class="home"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAMAAAC4XpwXAAAAY1BMVEX///8AAAArKysgICCMjIzCwsK9vb2wsLBsbGzGxsYzMzM+Pj7W1tb09PRjY2Pe3t5FRUWdnZ3Q0NDk5OTr6+sbGxsODg4lJSVNTU11dXUWFhZ+fn6SkpI4ODiEhIRaWlqlpaUtgIdoAAADoElEQVRoge2aa4OqIBCG0S6maWZSaZet//8rz3GTizoMSsB+4f20KzGPMAMMICHGosm9yZp7Qs1NmLPvEdO98A3P40goyz3Do6FOPuFlNFb5l3CP+HG3f+TJ9ycOvD7Sx9Wv70XLs663y8xn64XPz/Xvg/rsz/cSnM1x1BtedHtc84e1mHmcdn5+GficSfj+4hAv4PGwj8vYPb7mHXwZO7jm7xXVYF2L8Gi6qFLHeBFwVyi0SzHtOOj8nI+rGLae89A7W8eXN95ylW2x5N8sj3vJ52rL0tJn1feSXSyLo3PecbHEOF/hVkXo2Rv3+Urrc/5T7vuVJXzJ4TOCWQyNs5XOnxVwQnZDb7G1hW+LyqAnF3kKh5tEUc4jXzEtzpThCBIjFFwSZsp49pg5O821sTR8vw+9rxKWXKxKRniRrN1MYkfgMwP814mqlP4uxkuZkmnYmoeelSxRykIXGbGUoCvSfx38+aXPp/jnbHxtb1sK7rxQWd0VArtOVJZ3xJMdNw63fRowOm3A4Xv+Y1snIeKk5alpPc2swwetR31fuNmMCd9fkUNV6monKO1AlZ3vwOdMet87hMv4PYh3EnAQHgq9wvXBkzTpTkKPuj/1kvCj1lPh89QRfOD7Ad4LXIUv3AYchM+4773BIbwU7e6P2AW+j/zGi8+ZUk5run8rr3AZX/3vd574+brV4p1/KcjWb8s78dZvSesdLvAt6VP3H49wQn4+0Cfx7PSP2JRPLn9B7wPvQo6fP/a7g6xWU52eNrJSXa48tH7o3X0k6wjSFUU/gBotujBfgRpdsG3A5zFiCWL/8pF8NQZrbAjJoOcI/aCAj1dtPb2DbFUFsF5KOOYvkJ50JS1QoKS/EXgUHZbQd5+in/l0Ov3pQKoZE6DzYVW+q17vFqfzEXI7yuLGXzi9rbjAMZqi9ILlfw9aDLRlK6Vi4Pf0jeLlmDYonW0Hp6sCWzi2KF1ROpPOGEBRP3DXDulJ73SgqI+InXv6KtADPdADPdADPdADPdADPdADPdADPdADPdAD3R5dd1rYn8jd4MNuUzr7YE538cW+c4JP/Uzp/Tm0/qv+/p7mc3huic6O1Z86uLiWPSTpWKe1lv46TWol/ELhoaVT/hW0WggdkyKYwG6yT6/0cOzah+lsRFfdHIzU6OzsgUqVrtJxHpyQu8YQ1IWppo7udlM2dcQMPcFrP+hqi2u/7II9f++aPaimUtw5Jq8MVLN7q+6Y/wHQ1zjIagZEHwAAAABJRU5ErkJggg==">
+        </div>
+        <div class="box">
+            <img class="sub"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAMAAABmmnOVAAAAY1BMVEX///8AAACCgoL8/Pzj4+Pm5ube3t6qqqpQUFCzs7NAQED09PTa2trS0tLp6ekuLi6ZmZmIiIjKysqQkJB0dHTCwsKkpKRhYWEPDw8VFRUnJye7u7s3NzdoaGhLS0taWlodHR1tis7KAAAC2UlEQVR4nO2a2ZajIBBAIa5xxSWJiW3S//+VE9FoZk4LhQF0Ttd97Nh4j0BBURCCIAiCIAiC/BLiOPMG3M8YGsmyWNXAadnli2olD4vAV3EIcr0CL5qwBDu0ZhQ4B2ivHAxK0DCDSVQmJWgHk/AiSr+6qk292NFD7JesDkeLI8zCbVulgQwjLh9c4u7ob1uFmlu420p4XOK8rYTDx0UteSgNWHFYho3dmYgemimq4PR3XOCz/yEw8Jk8UF64RaIyJZsqnd/B+r+Eyw7FN6RJHmpUA8kcJs9CCRe4XKySoDQZXxMIJSJYYyu6g3PLABL16+k87OrlkXYeB6YPGph1F07fN5JLJDf+5DdL3UxjPHNiNwnGfUkpleDjhRb6Xv8Oa/rGD1KJS//blxkHQrq+9XsskXCuBj8EIce+9caVSfDeaE1JDJPJB0mkP/6mgVhBwtwKqyDhoQRKoMR/LFHeowqYwhmTSPr1JQ9WLfTaJI7DtiA6rdDQLfFMaNXXGP0Sz+RFdZUxIUEbpnYAZUSC0mugoqFXIp925fR+2koiIulj1kiE/2BQgjjtbR6hwOClXeIJm484C5CGCQniFZNFBDnxMCJBSDaP0LyVxlBDEoSkc590slM2YxKEnOZMXjJPDEqQOHhJVL9bot2+O3YwMHcwRfcQrN7OOzcK23tYwHawlO9iUzOx5fZuZA8b3R1s+XeQ/HyYBgrqHfYSYkHlB3Q0kIYR+/RoQFQDs3ZIIqoGWpOoBS+yJeHwbVD487iy9iX4wrNwkG9NIm2WKxr2Tu/icjHa2pMQYK/UIJWwUXSRStgoP4kkrBXiRAwlSVPXTN5KkiKG4uzBjEMFbHwsUzdV6usuU7MxQwDcNZt20TdhwV6NugunHOUOkQZeXVhLDtqJuJovHf4DNE+qbvK2VgK+9UeIfzZyA/LKwOniSH/FCXZ9CUJRBeXGd9wQBEEQBEEQBEEQBFnmD9DlKmdsGdQFAAAAAElFTkSuQmCC">
+        </div>
+
+    </nav>
+
+
+
+    <main class="mother">
+        <section class="preview">
+            <article class="image">
+                <img class="imga"
+                    src='	https://i.ytimg.com/vi/omYbgmiHsMQ/hqdefault.jpg?s…RUAAIhCGAE=&rs=AOn4CLDu4JDPncqRn0D2DAqT8PsvhQtLDg'>
+                <article class="timer">
+                    1:06:20
+                </article>
+            </article>
+
+            <article>
+                <h3>
+                    Mix - Uduak Isong
+                </h3>
+
+                <p>More from this channel for you</p>
+            </article>
+
+        </section>
+        <section class="preview">
+            <article class="image">
+                <img class="imga"
+                    src="https://i.ytimg.com/vi/5lm1PZ9mvK4/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLCTT3WiedWXW0gOTIlv9-6gFA_I5g">
+
+
+                <article class="timer-a">
+                    2:06:01
+                </article>
+                <div class="info">
+                    <article>
+                        <img class="small-img"
+                            src="https://yt3.ggpht.com/k3ZKzJRlUf5VdlzJSuFi-6_nyUGi4XdRjWOoqc80jGGybB5gBe4D9WX_ZP-Y8JBfRwjorfh-=s68-c-k-c0x00ffffff-no-rj">
+                    </article>
+
+                    <article class="text">
+                        <p>Meet the Geng</p>
+                        <p>The Geng</p>
+                        <p>643K views. 1 month</p>
+                    </article>
+                </div>
+
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="https://i.ytimg.com/vi/XBu54nfzxAQ/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&amp;rs=AOn4CLCcicrWcj4kO51mkMkAu1RdF-9QGw">
+            <article class="info">
+                <img class='small-img'
+                    src="https://yt3.ggpht.com/ytc/AKedOLSoPzZFsT6n9btrXJ7bYRTnfd1-aYKvre3LScrD=s68-c-k-c0x00ffffff-no-rj">
+                <article class="text">
+
+                    <article class="timer-c">
+                        3:06:01
+                    </article>
+                    <h3>Backend web development-a complete overview(2021)</h3>
+                    <p>SuperSimpleDev</p>
+                    <p>214K views . 8 months ago</p>
+                </article>
+
+            </article>
+        </section>
+        <section class="preview">
+            <img class="imga"
+                src="https://i.ytimg.com/vi/mU6anWqZJcc/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCXItolpxDNYJ8bdpX_aYK57pXkig">
+            <article class="info">
+                <img class="small-img"
+                    src="	https://yt3.ggpht.com/ytc/AKedOLRR2uNiXJiFH-XRmtGgkdICxTuDJxCPJidKFRNCNg=s68-c-k-c0x00ffffff-no-rj">
+
+                <article class="timer-d">
+                    2:56:01
+                </article>
+
+                <article class="text">
+                    <h3>
+                        Learn HTML5 and CSS3 From Scratch - Full Course
+                    </h3>
+                    <p>
+                        freeCodeCamp.org
+                    </p>
+                    <p>
+                        4.6M views . 3years ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="https://i.ytimg.com/vi/Cu5hhxP_prE/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCgN8irHdpC9SGNMgoUE-p_ibS2Zg">
+            <article class="info">
+                <img class="small-img"
+                    src="https://yt3.ggpht.com/ytc/AKedOLRD5TgAOw8g1nuZ-_3JlEpzBlP13TKWwgkL_01Hcw=s88-c-k-c0x00ffffff-no-rj">
+
+                <article class="timer-e">
+                    2:56:01
+                </article>
+
+                <article class="text">
+                    <h3>
+                        Justin Bieber & benny blanco - Lonely
+                        (Official Acoustic Video)
+                    </h3>
+                    <p>
+                        Justin Bieber
+                    </p>
+                    <p>
+                        25M views . 1 year ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="	https://i.ytimg.com/vi/cA7vngXKHJk/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLDtBBNI-lNaGQidkOpC8lopHEcQog">
+            <article class="info">
+                <img class="small-img"
+                    src="https://yt3.ggpht.com/ytc/AKedOLSJThC_d0sGJgaaZTVlNMrxXaeH27mDtzo9qtPS=s68-c-k-c0x00ffffff-no-rj">
+
+                <article class="timer-f">
+                    2:56:01
+                </article>
+
+                <article class="text">
+                    <h3>
+                        Lesson you should learn before the age of 30 - Dr. Myles Munroe
+                    </h3>
+                    <p>
+                        Gospel Motivation
+                    </p>
+                    <p>
+                        415K views . 10 months ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="		https://i.ytimg.com/vi/S0j8i4Yk61E/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBpk5idUJV19aGgw6tfVaZPM-82cQ">
+            <article class="info">
+                <img class="small-img"
+                    src="	https://yt3.ggpht.com/ytc/AKedOLTzF1K-M1YRUonEcoy_gHHE57eXcMCTq-lOUjLXhQ=s68-c-k-c0x00ffffff-no-rj">
+
+
+                <article class="timer-g">
+                    2:56:01
+                </article>
+                <article class="text">
+                    <h3>
+                        Yhemo Lee & Shank Comics on the #NdaniTGIFShow
+                    </h3>
+                    <p>
+                        NdaniTV
+                    </p>
+                    <p>
+                        228K views . 1 months ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="		https://i.ytimg.com/vi/PUiwYFOp-H4/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLBRP-BqXce96ieEiz1h618hOeME-A">
+            <article class="info">
+                <img class="small-img"
+                    src="	https://yt3.ggpht.com/ytc/AKedOLQf8YbrHUMqikJhpMqIegYt8Rl-dJG7yI4r1uaV=s68-c-k-c0x00ffffff-no-rj">
+
+                <article class="timer-h">
+                    2:56:01
+                </article>
+
+                <article class="text">
+                    <h3>
+                        The Perfect Marriage (Latest Nollywood Movie)
+                    </h3>
+                    <p>
+                        Bounceptnetwork
+                    </p>
+                    <p>
+                        228K views . 13 days ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="https://i.ytimg.com/vi/b7qAQ0DeWMM/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCB-Rdme0aQFanzweCaPNQ7h9C7Pw">
+            <article class="info">
+                <img class="small-img"
+                    src="https://yt3.ggpht.com/ytc/AKedOLQSHJtRDWiPEoz4uRUX1-3kow5oaFmbToa5Kc2rUg=s68-c-k-c0x00ffffff-no-rj">
+
+
+
+                <article class="text">
+                    <h3>
+                        7 Mistakes Ladies Make When They Like a Guy | Kingsley Okonkwo
+                    </h3>
+                    <p>
+                        Kingsley Okonkwo
+                    </p>
+                    <p>
+                        796K views . 1 year ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="	https://i.ytimg.com/vi/VEpO_v9utn0/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLClJ3QSruNIYhXhgqJp7yuMppi6xw">
+            <article class="info">
+                <img class="small-img"
+                    src="	https://yt3.ggpht.com/ytc/AKedOLQSHJtRDWiPEoz4uRUX1-3kow5oaFmbToa5Kc2rUg=s68-c-k-c0x00ffffff-no-rj">
+
+                <article class="timer-j">
+                    2:56:01
+                </article>
+                <article class="text">
+                    <h3>
+                        I Dare You To Disappear For A Year (Motivational Speech)
+                    </h3>
+                    <p>
+                        Team Fearless
+                    </p>
+                    <p>
+                        593K views . 3 weeks ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="https://i.ytimg.com/vi/Qk0zUZW-U_M/hq720.jpg?sqp=-…RUAAIhCGAE=&rs=AOn4CLDCVbgmC45m1MsuVvzy2zPsloA1ew">
+            <article class="info">
+                <img class="small-img"
+                    src="https://yt3.ggpht.com/ytc/AKedOLRKOfcLzqsa4fmKml3QJdjmJ2iAqzX7uU0svuvkCQ=s68-c-k-c0x00ffffff-no-rj">
+
+
+                <article class="timer-k">
+                    2:26:01
+                </article>
+                <article class="text">
+                    <h3>
+                        Recursion, the Fibonacci Sequence and Memoization
+                    </h3>
+                    <p>
+                        Socratica
+                    </p>
+                    <p>
+                        493K views . 5 years ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="preview">
+            <img class="imga"
+                src="https://i.ytimg.com/vi/B3LaTxwXNhY/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLCzvFaGeMNBX0ETVNq_b8NjeCcSRA">
+            <article class="info">
+                <img class="small-img"
+                    src="	https://yt3.ggpht.com/hWmh2OFgsabneRQlCPHP-OXHegKK…muNRYzmZ0GiAVB5wLUwvCOg=s68-c-k-c0x00ffffff-no-rj">
+
+                <article class="timer-l">
+                    2:56:01
+                </article>
+                <article class="text">
+                    <h3>
+                        Betrayed Trust | New Romantic Movie
+                    </h3>
+                    <p>
+                        Nollywood Movies
+                    </p>
+                    <p>
+                        493K views . 5 months ago
+                    </p>
+                </article>
+            </article>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

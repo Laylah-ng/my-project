@@ -1,0 +1,205 @@
+*{
+    box-sizing: border-box;
+}
+main{
+   
+    text-align: center;
+    margin-top: 0;
+    background-image: url("https://zuri.team/img/hero-bg.svg");
+    background-position: center;
+    height: 700px;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+body{
+    padding-bottom: 500px;
+}
+.red{
+    color: red;
+}
+.team{
+    font-size: 25px;
+    font-weight: bold;
+}
+.learn{
+    font-size: 30px;
+    font-weight: bold;
+}
+.team{
+    padding-top: 80px;
+    margin-bottom: 80px;
+}
+a{
+    text-decoration: none;
+}
+.info{
+    margin: 0 auto;
+    width: 50%;
+    
+}
+@media (max-width: 1100px) {
+    .info{
+        width: 90%
+    }
+}
+
+
+.new{
+    background-color: red;
+    border: none;
+    padding: 12px;
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+}
+.new:hover{
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+
+}
+.experience{
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+    padding-top:12px;
+    padding-bottom: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    
+    
+    
+
+}
+.experience:hover{
+    background-color: red;
+    border: none;
+  
+    color:white;
+}
+.display{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 250px;
+    justify-content: center;
+    row-gap: 20px;
+    
+}
+@media (min-width: 800px){
+    .display{
+        display: grid;
+        grid-template-columns:  250px 250px;
+        column-gap: 20px;
+    }
+}
+.needs{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 70px;
+    
+    
+}
+
+
+ 
+.understand{
+    background-color: #FFFAFA;
+    height: 400px;
+    padding-bottom: 30px;
+    
+    
+}
+.par{
+    text-align: left;
+    width: 90%;
+    height: 50%;
+    margin-left: 10px;
+    line-height: 28px;
+    
+    
+}
+.zurilogo{
+    position: relative;
+    top: 30px;
+    right: 140px;
+    margin-bottom: 20px;
+    
+}
+
+.pink{
+    display: grid;
+    grid-template-columns:90%;
+    row-gap: 20px;
+    justify-content: center;
+}
+@media (min-width: 1000px){
+    .pink{
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr;
+        column-gap: 20px;
+        justify-content: center;
+        padding: 40px 20px 0 20px ;
+    }
+    .zurilogo{
+        position: relative;
+        top: 30px;
+        right: 70px;
+        margin-bottom: 20px;
+        
+    }
+}
+
+
+.images{
+    position: absolute;
+    top: 900px;
+    z-index: -1;
+}
+
+.dot{
+    width: 300px;
+    height: 400px;
+    
+}
+.dotb{
+    width: 300px;
+    height: 400px;
+    margin-left: 700px;
+    
+    
+
+}
+
+@media (max-width: 1350px){
+    .images{
+       display: none;
+    }
+} 
+
+.soc{
+    width:18px
+}
+
+.teamb{
+    font-size: 25px;
+    font-weight: bold;
+}
+.contact{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    column-gap: 10%;
+
+}
+
+
+
+   
+
+
+
+
+
